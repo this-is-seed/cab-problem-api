@@ -2,20 +2,20 @@
 ## SETUP: 
 ### Requirements:
 
-Ruby Version 2.5.0 required
-https://www.postgresql.org/download/ PostgreSql
+* Ruby Version 2.5.0 required
+* https://www.postgresql.org/download/ PostgreSql
 
 Go in terminal to the location where project installed
 Run Commands 
-bundle install
-rake db:create
-rake db:migrate
-rake db:seed 
-rails s
+* bundle install
+* rake db:create
+* rake db:migrate
+* rake db:seed 
+* rails s
 
 On running these command we are ready to run the api’s 
 
-DRIVER API
+### DRIVER API
 
 POST: http://127.0.0.1:3000/api/v1/drivers
 
@@ -44,7 +44,7 @@ POST: http://127.0.0.1:3000/api/v1/drivers
 }
 ``` 
 
-GET :http://127.0.0.1:3000/api/v1/drivers?by_name=test&by_mobile_number=2132434312
+#### GET :http://127.0.0.1:3000/api/v1/drivers?by_name=test&by_mobile_number=2132434312
 
 Filters by_name and by_mobile_number are optional
 
@@ -67,7 +67,7 @@ Output:
 
 PUT: http://127.0.0.1:3000/api/v1/drivers
 
-INPUT: 
+#### INPUT: 
 
 ```json
 {
@@ -79,7 +79,7 @@ INPUT:
 }
 ```
 
-OUTPUT:
+#### OUTPUT:
 
 ```json
 {
@@ -97,10 +97,10 @@ OUTPUT:
  
 ### CUSTOMER API’S
 
-POST: http://127.0.0.1:3000/api/v1/customers
+#### POST: http://127.0.0.1:3000/api/v1/customers
 
+#### Input:
 ```json
-Input:
 {
    "customer": {
        "full_name": "Test Customer",
@@ -109,7 +109,7 @@ Input:
    }
 }
 ```
-Output:
+#### Output:
 
 ```
 {
@@ -124,7 +124,7 @@ Output:
 }
 ```
  
-GET: http://127.0.0.1:3000/api/v1/customers?by_name=Test&by_mobile_number=
+#### GET: http://127.0.0.1:3000/api/v1/customers?by_name=Test&by_mobile_number=
  
 By_name and by_mobile_number both filter optional
 ```json
@@ -149,7 +149,7 @@ By_name and by_mobile_number both filter optional
 }
  ```
 PUT: http://127.0.0.1:3000/api/v1/customers
-Input:
+#### Input:
 ```json
 {
    "customer": {
@@ -159,7 +159,7 @@ Input:
    }
 }
 ```
-Output:
+#### Output:
 ```json
 {
    "data": {
@@ -178,13 +178,13 @@ Rides
  
 POST: http://127.0.0.1:3000/api/v1/rides
  
-Input:
+#### Input:
 ```json
 {
    "customer_mobile_number": "7395945991"
 }
 ``` 
-Output:
+#### Output:
 ```json
 {
    "data": {
@@ -211,7 +211,7 @@ Output:
 
 PUT: http://127.0.0.1:3000/api/v1/rides
  
-Input:
+#### Input:
 ```json
 {
    "cab_trip_id": 1,
@@ -236,7 +236,7 @@ If is_cancelled_after_start than Input
   "rate_per_km": 4
 }
 ```
-Output:
+#### Output:
 ```json
 {
    "data": {
@@ -264,17 +264,17 @@ Output:
  
  
  
-Rating Ride
+### Rating Ride
  
 PUT: http://127.0.0.1:3000/api/v1/rate_driver
-Input:
+#### Input:
 ```json
 {
   "cab_trip_id": 1,
   "rating": 4.5
 }
 ``` 
-Output:
+#### Output:
 ```json
 {
    "data": [
@@ -282,16 +282,11 @@ Output:
    ],
    "error": []
 }
-json 
- 
- 
- 
- 
- 
- 
-FOR CANCELLED BEFORE START:
+```
 
-Input:
+### FOR CANCELLED BEFORE START:
+
+#### Input:
 
 ```json
 {
@@ -300,7 +295,7 @@ Input:
    "waiting_time": 6.7
 }
 ```
-Output:
+#### Output:
 ```json
 {
    "data": {
@@ -324,7 +319,7 @@ Output:
    "error": []
 }
 ``` 
-Rides Listing
+### Rides Listing
 All filters optional
 GET: http://127.0.0.1:3000/api/v1/rides?by_customer=2&by_driver=3&by_start_date=12-01-2021&by_end_date=12-01-2021&by_ride_number=101
 ```json 
