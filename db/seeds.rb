@@ -1,0 +1,433 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+
+CustomerPlan.create!([
+                         {name: 'Silver', code: 'svl', rating_required: 4},
+                         {name: 'Gold', code: 'gld', rating_required: 4.5},
+                         {name: 'Platinum', code: 'plt', rating_required: 4.8}
+                     ])
+
+Customer.create!([
+                     {full_name: Faker::Name.name, mobile_number:  '6943843558', customer_plan_id: CustomerPlan.find_by(code: 'plt').id},
+                     {full_name: Faker::Name.name, mobile_number:  '8943843558', customer_plan_id: CustomerPlan.find_by(code: 'gld').id},
+                     {full_name: Faker::Name.name, mobile_number:  '7943843558', customer_plan_id: CustomerPlan.find_by(code: 'svl').id}
+                 ])
+
+Driver.create!([
+                 {full_name: 'DriverAA', mobile_number: '2329449345', rating: 4.3, is_active: true},
+                 {full_name: 'DriverBB', mobile_number: '8329449345', rating: 5, is_active: true},
+                 {full_name: 'DriverCC', mobile_number: '9329449345', rating: 4.83, is_active: true},
+                 {full_name: 'DriverDD', mobile_number: '7329449345', rating: 4.8, is_active: true},
+                 {full_name: 'DriverEE', mobile_number: '5329449345', rating: 5, is_active: true}
+               ])
+
+CabTrip.create!([
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '8943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '7943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '8943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '7943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '8943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '7943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 4.3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '9329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 5,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '2329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 4,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '2329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 4,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '2329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '8943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 4,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '2329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 4,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '2329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '7943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 4,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '2329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 4,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '2329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 4,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '2329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 4,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '2329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 4,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '2329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '7943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 3,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '7329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '8943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 4.2,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '7329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 5,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '7329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 5,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '7329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '7943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 5,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '5329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '6943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 5,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    },
+                    {
+                        driver_id: Driver.find_by(mobile_number: '5329449345').id,
+                        customer_id: Customer.find_by(mobile_number: '8943843558').id,
+                        distance_travelled: 10.0,
+                        rating: 4,
+                        start_time: "12-01-2021 15:00",
+                        end_time: "12-01-2021 15:31",
+                        waiting_time: 6,
+                        rate_per_km: 4.0,
+                        surge_amount: 1.0,
+                        status: 'completed',
+                        total_fair: 119.0
+                    }
+                ])
